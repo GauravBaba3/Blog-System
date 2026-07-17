@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchProfile } from './store/authSlice';
 import { isAuthenticated } from './utils/tokenStorage';
@@ -45,7 +45,12 @@ function AppRoutes() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>Full Stack Blog System — Made With Love ❤️ By Gaurav Kumar</p>
+          <p>
+            Write Waves — Made With Love ❤️ By{" "}
+            <Link target='_blank' to={"https://www.linkedin.com/in/gauravkumar311/"}>
+              Gaurav Kumar
+            </Link>
+          </p>
         </div>
       </footer>
     </BrowserRouter>
