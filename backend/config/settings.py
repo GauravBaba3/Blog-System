@@ -34,14 +34,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
-    "corsheaders",
     # Local apps
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
-    
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -183,7 +181,18 @@ SIMPLE_JWT = {
 # CORS — allow React Vite dev server
 # ---------------------------------------------------------------------------
 
-CORS_ALLOWED_ORIGINS = os.getenv(
-    'CORS_ALLOWED_ORIGINS',
-    'http://localhost:5173,http://127.0.0.1:5173'
-).split(',')
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        "ALLOWED_HOSTS",
+        "localhost,127.0.0.1"
+    ).split(",")
+]
+
+CORS_ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "CORS_ALLOWED_ORIGINS",
+        "http://localhost:5173"
+    ).split(",")
+]
