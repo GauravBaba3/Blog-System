@@ -6,7 +6,7 @@ import {
   clearTokens,
 } from '../utils/tokenStorage';
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = "https://blog-system-qoo3.onrender.com/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
