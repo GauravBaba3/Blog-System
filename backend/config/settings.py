@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
+    "corsheaders",
     # Local apps
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
+    
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
